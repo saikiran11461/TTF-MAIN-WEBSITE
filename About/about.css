@@ -13,12 +13,15 @@ button {
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 60px;
   width: 100%;
   background-color: #485461;
   background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
   overflow-x: hidden;
   transform-style: preserve-3d;
+  /* border: 2px solid transparent; */
+  border-bottom: 2px solid white;
+  overflow: hidden;
 }
 
 .navbar {
@@ -39,6 +42,7 @@ button {
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  /* border-bottom: 2px solid white; */
 }
 
 .logo1 {
@@ -60,6 +64,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  
 }
 
 .bar {
@@ -69,6 +74,7 @@ button {
   background-color: #eee;
   transition: 0.5s;
   position: relative;
+
 
 }
 
@@ -92,6 +98,7 @@ button {
 
 .main {
   position: relative;
+
   width: 100%;
   left: 0;
   z-index: 5;
@@ -102,12 +109,12 @@ button {
  
 }
 
-header {
+/* header {
   min-height: 100vh;
   width: 100%;
   background: url("https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI2fHxvZmZpY2UlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60") no-repeat top center / cover;
   position: relative;
-}
+} */
 
 /* "https://i.postimg.cc/vHtXVqkr/bg.jpg" */
 
@@ -239,70 +246,844 @@ ul {
   }
 }
 
-.shadow {
-  position: absolute;
+ /* slider */
+  
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+/* html {
+  font-size: 1rem;
+  box-sizing: border-box;
+} */
+/* body {
   width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  transform-style: preserve-3d;
-  transform-origin: left;
-  transition: 0.5s;
+  height: 100%;
+  color: #272727;
+  line-height: 1.9;
+  background-color: #f7f5f5;
+  font-family:Arial, Helvetica, sans-serif;
+} */
+h2{
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3.5;
+}
+.slider{
+    position: relative;
+     max-width: 40rem; 
+    height: 26.625rem; 
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+.slide{ 
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+    border: 2px solid transparent;
+}
+.slide > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+button{
+    background: none;
+    border: none;
+   
+}
+button .fas{
+    color: #182e42;
+}
+.btn-slide{
+    position:absolute;
+    top:50%;
+    z-index: 10;
+    height: 5.5rem;
+    width: 5.5rem;
+    cursor: pointer;
+ 
+
+}
+.prev{
+    left:3rem;
+    transform: translate(-50%, -50%);
+}
+.next{
+    right: 3rem;
+    transform: translate(50%, -50%); 
+}
+.dots-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.dot{
+    width: 25px;
+    height: 5px;
+    margin: 15px 5px;
+    border-radius: .5rem;
+    background: rgba(243, 239, 239, 0.5);
+    cursor: pointer;
+}
+.dot.active{
+background:#eceaea;
+}
+
+.main-slider{
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: row;
+  font-family: Gellix, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ border: 2px solid transparent;
+ background-color:#182e42;
+ color: white;
+}
+.main-slider-left{
+border: 2px solid transparent;
+width: 60%;
+margin: 30px
+}
+.main-slider-left h3{
+  font-size: 30px;
+}
+
+.main-slider-left h4{
+  font-size: 50px;
+  line-height: 60px;
+  margin: 30px 0px;
+}
+
+.main-slider-left p{
+  font-size: 20px;
+  line-height: 30px;
+ 
+}
+.main-slider-left>div{
+  border: 2px solid transparent;
+  width: 70%;
+  margin: auto;
+  margin-top: 60px;
+}
+.main-slider-right{
+border: 2px solid transparent;
+width: 40%;
+margin: 30px;
+}
+
+.what-we-do{
+  border: 2px solid transparent;
+  padding-bottom: 50px;
+  margin-top: 70px;
+  background-color:#eeeeee;
+}
+.what-we-do-cards{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: 500px;
+  border: 2px solid transparent;
+  grid-gap: 50px;
+  grid-template-areas: 
+  ". . card-1 card-1 card-1 card-2 card-2 card-2 card-3 card-3 card-3 . ."
+  ;
+}
+.what-we-do-heading{
+  width: 60%;
+  padding: 50px;
+  margin: auto;
+  color: #1179e7;
+}
+.what-we-do-cards img{
+  width: 100%;
+  border-radius: 10px;
+}
+.what-we-do-cards h3{
+  color: #1e84eb;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 20px;
+}
+.what-we-do-cards p{
+  color: black;
+  font-size: 18px;
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+}
+.what-we-do-cards button{
+  padding: 6px 20px;
+  border:2px solid #182e42 ;
+  color:white;
+  font-size: 19px;
+  border-radius: 20px;
+  margin: 40px 10px;
+  background-color:#182e42;
+}
+.what-we-do-cards .card-1{
+  grid-area: card-1;
+  color: white;
+  border: 2px solid #182e42;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.what-we-do-cards .card-2{
+  grid-area: card-2;
+  border: 2px solid #182e42;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.what-we-do-cards .card-3{
+  grid-area: card-3;
+  border: 2px solid #182e42;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.what-we-do-cards>div{
+  border: 2px solid transparent;
+}
+.what-we-do-cards >div>div{
+
+}
+.what-we-do h1{
+  font-size: 40px;
+}
+.what-we-do h4{
+  font-size: 20px;
+}
+.what-we-do {
+  text-align: center;
+}
+
+.ourculture{
+  border: 2px solid tr;
+  width: 98%;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 80px;
+  background-color:#182e42;
+}
+.ourculture-cards{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: auto;
+  border: 2px solid transparent;
+  width: 80%;
+  padding: 70px;
+}
+.ourculture-cards>div{
+  width: 48%;
+  height:300px;
+  border: 2px solid transparent;
+  margin: auto;
   background-color: white;
 }
+.ourculture-header{
+  border: 2px solid transparent;
+  width: 77%;
+  padding: 30px;
+  margin: auto;
+  color: white;
+}
+.ourculture-header h1{
+  font-size: 50px;
+}
+.ourculture-header p{
+  font-size: 25px;
+}
+.ourculture-cards>div h1{
+  margin: 30px 40px;
+  font-size: 40px;
+}
+.ourculture-cards>div h4{
+  margin: 10px 40px;
+  font-size: 20px;
+}
+.ourculture-cards i{
+  padding: 20px 40px;
+  font-size: 15px;
+  text-decoration: underline;
+  padding-bottom: 0px;
 
-.shadow.one {
-  z-index: -1;
-  opacity: 0.15;
+}
+.ourculture-comment{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  height: auto;
 }
 
-.shadow.two {
-  z-index: -2;
-  opacity: 0.1;
+.ourculture-comment>div:nth-child(1){
+  border: 2px solid transparent;
+  width: 40%;
+  height: auto;
+  margin-bottom: 60px;
+}
+.ourculture-comment>div img{
+  width: 50%;
+  height: 95%;
+  margin-left: 140px;
+  object-fit: cover;
+}
+.ourculture-comment-matter{
+  border: 2px solid transparent;
+  width: 60%;
+  height: auto;
+}
+.ourculture-comment-matter h1{
+  font-size: 40px;
+  margin: 10px 30px;
+  color:white;
 }
 
-.container.active .shadow.one {
-  animation: shadow-one 0.6s ease-out;
-  transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+.footer{
+  border: 2px solid transparent;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3  0px;
+  flex-direction: row;
+  margin: 10px;
+  padding: 40px;
+  width: 95%;
+  /* background-image: url('https://assets.website-files.com/5e6c01bb5212506d6c119069/5e6edcb60f8bc32556bae915_footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: #182e42;
+}
+.footer>div{
+  gap: 30px;
+}
+.footer>:nth-child(1){
+  border:2px solid transparent ;
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  line-height: 50px;
+}.footer>:nth-child(2){
+  border:2px solid transparent ;
+  width: 30%;
+}
+.footer>:nth-child(2) #email{
+  padding: 10px 45px;
+  margin-top: 30px;
+  margin-left: 100px;
+  border: none;
+  border-radius:10px;
+  border: 2px solid #19538a;
+  margin-right: 10px;
+}
+.footer>:nth-child(2) #submit{
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #19538a;
+  border-radius: 10px;
+
+}
+.footer>div h2{
+  color: rgb(100,128,147);
+  font-size: 23px;
+  margin-bottom: 40px;
+}
+.footer>div p{
+  color: white;
+  font-size: 14px;
+}
+.footer .address{
+  border: 2px solid transparent;
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.footer a{
+  list-style: none;
+  text-decoration: none;
+}
+.footer i{
+  padding: 4px 30px;
+ font-size: 30px;
+ color: white;
+  padding-left: 0px;
+}
+.how-we-solve-problem{
+  width: 98%;
+  border: 2px solid transparent;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  margin-bottom: 80px;
+}
+.how-we-solve-problem>div:nth-child(1){
+  border: 2px solid transparent;
+  width: 56%;
+  text-align: center;
+  
+}
+.how-we-solve-problem h1{
+  font-size: 50px;
+}
+.how-we-solve-problem p{
+  font-size: 20px;
+  margin: 40px 0px;
+}
+.how-we-solve-problem button{
+ padding: 10px 25px;
+ font-size: 20px;
+ background-color: rgb(224, 190, 35);
+ color: black;
+
+}
+.how-we-solve-problem span{
+ color: rgb(224, 190, 35);
+}
+.how-we-solve-problem>div>div{
+  border: 2px solid transparent;
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
+}
+.how-we-solve-problem>div:nth-child(2){
+  border: 2px solid transparent ;
+  width: 40%;
+ 
+}
+.how-we-solve-problem img{
+  width: 700px;
+  height: 700px;
+  object-fit: cover;
+  
 }
 
-@keyframes shadow-one {
-  0% {
-    transform: translate(0);
+@media screen and (min-width: 0px) and (max-width:420px) {
+  .main-slider{
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction:column;
+    font-family: Gellix, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   border: 2px solid transparent;
   }
-
-  5% {
-    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-  }
-
-  100% {
-    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
-  }
+  .main-slider-right{
+    border: 2px solid transparent;
+    width: 100%;
+    margin: 0px;
+    }
+    .main-slider-left{
+      border: 2px solid transparent;
+      width: 100%;
+      margin: 0px;
+      text-align: center;
+      margin-bottom: 30px;
+      }
+      .main-slider-left>div{
+        border: 2px solid transparent;
+        width: 100%;
+      }
+      .what-we-do-cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 500px 500px 500px;
+        border: 2px solid #182e42;
+        border-radius: 10px;
+        margin-top: 40px;
+        grid-gap: 50px;
+        grid-template-areas: 
+        "card-1 card-1 card-1"
+        "card-2 card-2 card-2"
+        "card-3 card-3 card-3"
+        ;
+      }
+      .card-1 .card-2 .card-3{
+        border-radius: 10px;
+        border: 2px solid #182e42;
+      }
+      .ourculture{
+        border: 2px solid transparent;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 80px;
+      }
+      .ourculture-cards{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: auto;
+        border: 2px solid transparent;
+        width: 100%;
+        padding: 0px;
+      }
+      .ourculture-cards>div{
+        width: 97%;
+        height:auto;
+        border: 2px solid transparent;
+        margin: auto
+      }
+      .ourculture-header{
+        border: 2px solid transparent;
+        width: 80%;
+        padding: 30px;
+        margin: auto;
+      }
+      .ourculture-cards>div h1{
+        margin: 30px 40px;
+        font-size: 30px;
+      }
+      .ourculture-cards>div h4{
+        margin: 10px 40px;
+        font-size: 15px;
+      }
+      .ourculture-header h1{
+        font-size: 30px;
+      }
+      .ourculture-header p{
+        font-size: 19px;
+      }
+      .what-we-do-heading h1{
+        font-size: 30px;
+      }
+      .what-we-do-heading  h4{
+        font-size: 16px;
+      }
+      .what-we-do-heading {
+        width: 100%;
+       padding: 0px;
+      }
+      .ourculture-comment{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        height: auto;
+      }
+      
+      .ourculture-comment>div:nth-child(1){
+        border: 2px solid transparent;
+        width: 90%;
+        height: auto;
+        margin: auto;
+      }
+      .ourculture-comment>div img{
+        width: 100%;
+        height: 95%;
+        margin-left: 0px;
+        object-fit: cover;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .ourculture-comment-matter{
+        border: 2px solid transparent;
+        width: 97%;
+        height: auto;
+      }
+      .ourculture-comment-matter h1{
+        font-size: 30px;
+        margin: 70px 30px;
+        color:white;
+        text-align: center;
+      }
+      .footer{
+        border: 2px solid transparent;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+       width: 100%;
+      }
+      .footer>div{
+        gap: 0px;
+        text-align: center;
+      }
+      .firstdiv-footer{
+        text-align: center;
+      }
+      .footer>:nth-child(1){
+        border:2px solid transparent ;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 90px;
+        text-align: left;
+        line-height: 30px;
+      }.footer>:nth-child(2){
+        border:2px solid transparent ;
+        width: 100%;
+        line-height: 5px;
+      }
+      .footer>div>:nth-child(1){
+        border: 2px solid transparent;
+        width: 100%;
+        
+      }
+      .footer>div h2{
+        color: rgb(100,128,147);
+        font-size: 23px;
+        margin-bottom: 0px;
+        line-height: 30px;
+      }
+      .footer>div p{
+        color: white;
+        font-size: 14px;
+      }
+      .footer .address{
+        height: 100px;
+        line-height: 25px;
+      }
+      .footer>:nth-child(2) #email{
+        padding: 10px 45px;
+        margin-top: 30px;
+        margin-left: 0px;
+        border: none;
+        border-radius:10px;
+        border: 2px solid #19538a;
+        margin-right: 0px;
+      }
+      .footer>:nth-child(2) #submit{
+        padding: 10px 20px;
+        border: none;
+        color: white;
+        background-color: #19538a;
+        border-radius: 10px;
+      
+      }
+      .how-we-solve-problem>div>div{
+        border: 2px solid black;
+        width: 100%;
+        margin: auto;
+        margin-top: 100px;
+      }
+      .how-we-solve-problem>div:nth-child(2){
+        border: 2px solid transparent ;
+        width: 100%;
+       
+      }
+      .how-we-solve-problem{
+        width: 98%;
+        border: 2px solid transparent;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 0%;
+        padding: 0%;
+        flex-wrap: wrap;
+        background-color: #f5f5f5;
+      }
+      .how-we-solve-problem>div>div{
+        border: 2px solid transparent;
+        width: 100%;
+        margin: auto;
+        margin-top: 0px;
+      }
+      .how-we-solve-problem>div:nth-child(1){
+        border: 2px solid transparent;
+        width: 100%;
+        text-align: center;
+        
+      }
+      .how-we-solve-problem img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin:60px 0px;
+        
+      }
+      
 }
-
-.container.active .shadow.two {
-  animation: shadow-two 0.6s ease-out;
-  transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
-}
-
-@keyframes shadow-two {
-  0% {
-    transform: translate(0);
+@media screen and (min-width: 400px) and (max-width:899px) {
+  .main-slider{
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction:column;
+    font-family: Gellix, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   border: 2px solid transparent;
   }
-
-  20% {
-    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-  }
-
-  100% {
-    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
-  }
-}
-
-.container.active .main:hover + .shadow.one {
-  transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
-}
-
-.container.active .main:hover {
-  transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+  .main-slider-right{
+    border: 2px solid transparent;
+    width: 100%;
+    margin: 0px;
+    }
+    .main-slider-left{
+      border: 2px solid transparent;
+      width: 100%;
+      margin: 0px;
+      text-align: center;
+      margin-bottom: 30px;
+      }
+      .main-slider-left>div{
+        border: 2px solid transparent;
+        width: 100%;
+      }
+      .what-we-do-cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows:repeat(500,1fr);
+        border: 2px solid transparent;
+        border-radius: 10px;
+        margin-top: 40px;
+        grid-gap: 50px;
+        grid-template-areas: 
+        "card-1 card-2"
+        "card-3 ."
+        ;
+      }
+      .card-1 .card-2 .card-3{
+        border-radius: 10px;
+        border: 2px solid #182e42; 
+      }
+      .ourculture{
+        border: 2px solid transparent;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 80px;
+      }
+      .ourculture-cards{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: auto;
+        border: 2px solid transparent;
+        width: 100%;
+        padding: 0px;
+      }
+      .ourculture-cards>div{
+        width: 80%;
+        height:auto;
+        border: 2px solid transparent;
+        margin: auto
+      }
+      .ourculture-header{
+        border: 2px solid transparent;
+        width: 80%;
+        padding: 30px;
+        margin: auto;
+      }
+      .ourculture-comment{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        height: auto;
+      }
+      
+      .ourculture-comment>div:nth-child(1){
+        border: 2px solid transparent;
+        width: 90%;
+        height: auto;
+        margin: auto;
+      }
+      .ourculture-comment>div img{
+        width: 60%;
+        height: 95%;
+        object-fit: cover;
+        margin: auto;
+        margin-left: 140px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .ourculture-comment-matter{
+        border: 2px solid transparent;
+        width: 90%;
+        height: auto;
+        margin: auto;
+      }
+      .ourculture-comment-matter h1{
+        font-size: 30px;
+        margin: 70px 30px;
+        color:white;
+        text-align: center;
+      }
+      .footer>:nth-child(1){
+        border:2px solid transparent ;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .footer>:nth-child(2){
+        border:2px solid transparent ;
+        width: 60%;
+        margin: auto;
+      }
+     .footer{
+      padding: 1%;
+      margin: 0%;
+      width: 95%;
+      margin: auto
+     }
+     .footer>div h2{
+       margin-bottom: 10px;
+     }
+     .footer>:nth-child(2) #email{
+      padding: 10px 45px;
+      margin-top: 30px;
+      margin-left: 70px;
+      border: none;
+      border-radius:10px;
+      border: 2px solid #19538a;
+      margin-right: 10px;
+    }
+    .footer>:nth-child(2) #submit{
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      background-color: #19538a;
+      border-radius: 10px;
+    
+    }
+    .how-we-solve-problem>div>div{
+      border: 2px solid transparent;
+      width: 100%;
+      margin: auto;
+      margin-top: 100px;
+    }
+    .how-we-solve-problem>div:nth-child(2){
+      border: 2px solid transparent ;
+      width: 100%;
+     
+    }
+    .how-we-solve-problem{
+      width: 96%;
+      border: 2px solid transparent;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 0%;
+      padding: 0%;
+      flex-wrap: wrap;
+      background-color: #f5f5f5;
+    }
+    .how-we-solve-problem>div>div{
+      border: 2px solid transparent;
+      width: 100%;
+      margin: auto;
+      margin-top: 0px;
+    }
+    .how-we-solve-problem>div:nth-child(1){
+      border: 2px solid transparent;
+      width: 100%;
+      text-align: center;
+      
+    }
+    .how-we-solve-problem img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 60px 0px;
+      
+    }
 }
